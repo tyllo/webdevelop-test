@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 export const createRouter = (options: { store?: Store<unknown> }) => {
   const router = new VueRouter({
-    mode: 'history', // 'hash',
+    mode: 'hash',
     base: process.env.VUE_APP_BASE_URL,
     routes: [],
   })

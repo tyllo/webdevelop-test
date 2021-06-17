@@ -3,6 +3,7 @@ const { isProd } = require('./configs/vue/common')
 
 module.exports = {
   lintOnSave: false,
+  publicPath: isProd ? '/webdevelop-test' : '',
 
   css: {
     sourceMap: true,
