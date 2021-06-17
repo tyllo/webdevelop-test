@@ -1,0 +1,12 @@
+/* stylelint-disable selector-max-type */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-family-arial;
+}
+
+* {
+  box-sizing: border-box;
+}

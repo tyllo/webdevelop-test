@@ -1,39 +1,57 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "webpack-env"
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strictNullChecks": true,
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM"
     ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
+    "typeRoots": [],
+    "types": [
+      "webpack-env"
     ]
   },
+  "files": [
+    "@types/lodash/index.d.ts",
+    "@types/luxon/index.d.ts",
+    "@types/sortablejs/index.d.ts",
+    "vee-validate/types/index.d.ts",
+    "vuetify/types/lib.d.ts",
+    "src/typings/shims-modules.d.ts",
+    "src/typings/shims-global.d.ts",
+    "src/typings/shims-vue.d.ts"
+  ],
   "include": [
+    "configs/**/*.js",
+    "src/**/*.js",
     "src/**/*.ts",
-    "src/**/*.tsx",
     "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    ".eslintrc.js",
+    "babel.config.js",
+    "stylelint.config.js",
+    "vue.config.js"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".vscode",
+    "public",
+    "dist"
   ]
 }

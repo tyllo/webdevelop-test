@@ -1,12 +1,34 @@
+// styles
+import '@/assets/scss/main.scss'
+
+import { CreateElement } from 'vue/types/umd'
+
 import Vue from 'vue'
+
+import { createRouter } from '@/router'
+
+// Plugins
+import { initPlugins } from '@/plugins'
+
 import App from './App.vue'
-import router from './router'
-import store from './store'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false // process.env.NODE_ENV !== 'production'
 
-new Vue({
+const router = createRouter({})
+
+const app = {
+  name: 'root',
   router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h: CreateElement) => h(App),
+}
+
+const options: Parameters<typeof initPlugins>[0] = {
+  Vue,
+  app,
+  router,
+  App: void 0,
+}
+
+initPlugins(options)
+
+options.App = new Vue(app).$mount('#app')
